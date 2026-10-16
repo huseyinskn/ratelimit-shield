@@ -1,4 +1,4 @@
-# rate-shield
+# ratelimit-shield
 
 A fast, zero-dependency in-memory and Redis rate limiting and abuse-prevention middleware for Node.js, Express, and Next.js.
 
@@ -19,7 +19,7 @@ A fast, zero-dependency in-memory and Redis rate limiting and abuse-prevention m
 ## Installation
 
 ```bash
-npm install rate-shield
+npm install ratelimit-shield
 ```
 
 ## Usage
@@ -28,7 +28,7 @@ npm install rate-shield
 
 ```javascript
 import express from 'express';
-import { rateShield } from 'rate-shield';
+import { rateShield } from 'ratelimit-shield';
 
 const app = express();
 
@@ -67,7 +67,7 @@ app.post(
 
 ```typescript
 import { NextResponse } from 'next/server';
-import { RateLimiter, getClientIp } from 'rate-shield';
+import { RateLimiter, getClientIp } from 'ratelimit-shield';
 
 const limiter = new RateLimiter({
   windowMs: 60 * 1000,
@@ -99,7 +99,7 @@ export async function POST(req: Request) {
 
 ```javascript
 import Redis from 'ioredis';
-import { rateShield, RedisStore } from 'rate-shield';
+import { rateShield, RedisStore } from 'ratelimit-shield';
 
 const redis = new Redis(process.env.REDIS_URL);
 
